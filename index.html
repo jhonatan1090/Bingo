@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+</head>
+
+<style>
+
+body {
+  margin: 10px;
+}
+
+.box {
+  background-color: darkgrey;
+  color: #fff;
+  border-radius: 5px;
+  padding: 12%;
+  font-size: 400%;
+  text-align: center;
+}
+
+.chosen {
+  background-color: darkgreen;
+  color: #fff;
+}
+
+.wrapper {
+  width: auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: 100px 100px 100px;
+  grid-auto-flow: column;
+}
+
+</style>
+
+
+<body>
+    
+    <div class="wrapper">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box chosen">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box chosen">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+        <div class="box chosen">11</div>
+        <div class="box chosen">12</div>
+      </div>
+
+</body>
+</html>

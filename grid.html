@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+</head>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    height:100%;
+    background: rgb(194, 194, 194);
+    overflow-y: auto;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50px auto;
+    background: blueviolet;
+    height: 100%;
+}
+
+.menu{
+    background: rgb(37, 37, 37);
+    border: 1px solid #ccc;
+    grid-column: span 2;
+}
+
+.firstColumn{
+    display: grid;
+    background: rgb(194, 194, 194);
+    border: 1px solid #ccc;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(9, 1fr);
+    grid-gap: 1px;
+}
+
+.chosen {
+    display: flex;
+    background: rgb(37, 37, 37);
+    border: 1px solid rgb(87, 81, 81);
+    border-radius: 10px;    
+    color: rgb(189, 189, 189);
+    font-size: 14vw;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1 / 4;
+}
+
+.rank{
+    background: rgb(37, 37, 37);
+    border: 1px solid rgb(87, 81, 81);
+    border-radius: 10px;
+    grid-row: span 5;
+}
+
+.rank ul {
+    width: auto;
+}
+
+.rank ul li{
+    text-align: center;
+    padding: 3px 0;
+    color: rgb(189, 189, 189);
+    font-size: 1vw;
+    font-family: sans-serif;
+
+}
+
+.amount{
+    display: flex;
+    background: rgb(37, 37, 37);
+    border: 1px solid rgb(87, 81, 81);
+    border-radius: 10px;
+    grid-row: span 1;
+    color: rgb(189, 189, 189);
+    font-size: 3vw;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.secundColumn{
+    background: rgb(194, 194, 194);
+    border: 1px solid #ccc;
+    height: 100%;
+    display: inline-grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.item{
+    border: 2px solid rgb(158, 158, 158);
+    display: flex;
+    background-color: darkgrey;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 4vw;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.called_ball{
+    border: 2px solid rgb(64, 146, 53);
+    background-color: rgb(91, 172, 125);
+    color: rgb(35, 126, 50);
+}
+
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="menu"></div>
+        <div class="firstColumn">
+            <div class="chosen">46</div>
+            <div class="rank">
+                <ul>
+                    <li>
+                        <b>Mostrar ranking?</b>
+                        <input type="radio" name="opcao" value="yes" checked> Sim
+                        <input type="radio" name="opcao" value="no"> Não
+                    </li>
+                      <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>   
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                    <li>Jhonatan</li>
+                </ul>
+            </div>
+            <div class="amount">R$ 87,00</div>
+        </div>
+        <div class="secundColumn">
+            <div class="item">01</div>
+            <div class="item">02</div>
+            <div class="item">03</div>
+            <div class="item">04</div>
+            <div class="item">05</div>
+            <div class="item">06</div>
+            <div class="item called_ball">07</div>
+            <div class="item">08</div>
+            <div class="item">09</div>
+            <div class="item">10</div>
+            <div class="item">11</div>
+            <div class="item">12</div>
+            <div class="item">13</div>
+            <div class="item">14</div>
+            <div class="item">15</div>
+            <div class="item">16</div>
+            <div class="item">17</div>
+            <div class="item">18</div>
+            <div class="item">19</div>
+            <div class="item">20</div>
+            <div class="item called_ball">21</div>
+            <div class="item">22</div>
+            <div class="item">23</div>
+            <div class="item">24</div>
+            <div class="item">25</div>
+            <div class="item">26</div>
+            <div class="item called_ball">27</div>
+            <div class="item">28</div>
+            <div class="item">29</div>
+            <div class="item">30</div>
+            <div class="item">31</div>
+            <div class="item">32</div>
+            <div class="item">33</div>
+            <div class="item">34</div>
+            <div class="item">35</div>
+            <div class="item">36</div>
+            <div class="item">37</div>
+            <div class="item">38</div>
+            <div class="item">39</div>
+            <div class="item">40</div>
+            <div class="item">41</div>
+            <div class="item called_ball">42</div>
+            <div class="item">43</div>
+            <div class="item">44</div>
+            <div class="item called_ball">45</div>
+            <div class="item called_ball">46</div>
+            <div class="item">47</div>
+            <div class="item">48</div>
+            <div class="item">49</div>
+            <div class="item">50</div>
+            <div class="item">51</div>
+            <div class="item">52</div>
+            <div class="item">53</div>
+            <div class="item">54</div>
+            <div class="item">55</div>
+            <div class="item">56</div>
+            <div class="item">57</div>
+            <div class="item">58</div>
+            <div class="item">59</div>
+            <div class="item">60</div>
+            <div class="item">61</div>
+            <div class="item">62</div>
+            <div class="item">63</div>
+            <div class="item">64</div>
+            <div class="item">65</div>
+            <div class="item">66</div>
+            <div class="item">67</div>
+            <div class="item called_ball">68</div>
+            <div class="item">69</div>
+            <div class="item">70</div>
+            <div class="item">71</div>
+            <div class="item">72</div>
+            <div class="item called_ball">73</div>
+            <div class="item">74</div>
+            <div class="item">75</div>
+            <div class="item">76</div>
+            <div class="item">77</div>
+            <div class="item">78</div>
+            <div class="item">79</div>
+            <div class="item">80</div>
+            <div class="item called_ball">81</div>
+            <div class="item">82</div>
+            <div class="item">83</div>
+            <div class="item">84</div>
+            <div class="item">85</div>
+            <div class="item">86</div>
+            <div class="item">87</div>
+            <div class="item">88</div>
+            <div class="item">89</div>
+            <div class="item">90</div>
+        </div>
+    </div>
+    
+</body>
+</html>
