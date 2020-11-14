@@ -78,6 +78,15 @@ html, body{
     bottom:   5px;
 }
 
+#pause{
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left:    33px;
+    bottom:   5px;
+}
+
 .rank{
     background: #171E22;
     border: 1px solid rgb(87, 81, 81);
@@ -160,6 +169,7 @@ html, body{
         <div class="firstColumn">
             <div class="chosen">46
                 <button class="btn" id="config"><i class="fas fa-tools"></i></button>
+                <button class="btn" id="pause"><i class="fas fa-pause"></i></button>
             </div>
             <div class="rank">
                 <ol>
@@ -327,6 +337,17 @@ $( "#config" ).click(function() {
     }else{
         $( ".menu" ).hide();
         $( "#config" ).css("background-color", "#fff");
+    }
+
+});
+
+$( "#pause" ).click(function() {
+    var color = $( this ).css( "background-color" );
+
+    if(color == "rgb(255, 255, 255)"){      
+        $( "#pause" ).css("background-color", "#BDBDBD");
+    }else{
+        $( "#pause" ).css("background-color", "#fff");
     }
 
 });
