@@ -6,32 +6,41 @@
     <title>Grid Layout</title>
 </head>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 <style>
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 html, body{
-    height:100%;
+    height:100% !important;
     background: rgb(194, 194, 194);
-    overflow-y: auto;
+    line-height: 1.0;
 }
 
-.container{
+._container{
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: 50px auto;
+    grid-template-rows: auto;
     background: blueviolet;
     height: 100%;
 }
 
 .menu{
-    background: rgb(37, 37, 37);
+    background:#506A6F;
     border: 1px solid #ccc;
-    grid-column: span 2;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 40px;
+    display: none;
+    z-index: 5;
+    border-bottom: 2px #fff solid;
 }
 
 .firstColumn{
@@ -45,11 +54,12 @@ html, body{
 }
 
 .chosen {
+    position: relative;
     display: flex;
-    background: rgb(37, 37, 37);
+    background: #171E22;
     border: 1px solid rgb(87, 81, 81);
     border-radius: 10px;    
-    color: rgb(189, 189, 189);
+    color: #FF7043;
     font-size: 14vw;
     font-family: sans-serif;
     font-weight: bold;
@@ -59,33 +69,49 @@ html, body{
     grid-row: 1 / 4;
 }
 
+#config{
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left:    5px;
+    bottom:   5px;
+}
+
 .rank{
-    background: rgb(37, 37, 37);
+    background: #171E22;
     border: 1px solid rgb(87, 81, 81);
     border-radius: 10px;
     grid-row: span 5;
 }
 
-.rank ul {
+.rank ol {
     width: auto;
+    overflow: hidden;
+    height: 54.6vh;
 }
 
-.rank ul li{
+.rank ol li{
     text-align: center;
     padding: 3px 0;
-    color: rgb(189, 189, 189);
+    color: #D0D3D4;
     font-size: 1vw;
     font-family: sans-serif;
+    list-style-type: none;
+    line-height: 1.2;
+}
 
+.rank ol li span{
+    min-width: 30px;
 }
 
 .amount{
     display: flex;
-    background: rgb(37, 37, 37);
+    background: #171E22;
     border: 1px solid rgb(87, 81, 81);
     border-radius: 10px;
     grid-row: span 1;
-    color: rgb(189, 189, 189);
+    color: #D0D3D4;
     font-size: 3vw;
     font-family: sans-serif;
     font-weight: bold;
@@ -129,49 +155,65 @@ html, body{
 
 <body>
 
-    <div class="container">
+    <div class="_container">
         <div class="menu"></div>
         <div class="firstColumn">
-            <div class="chosen">46</div>
+            <div class="chosen">46
+                <button class="btn" id="config"><i class="fas fa-tools"></i></button>
+            </div>
             <div class="rank">
-                <ul>
-                    <li>
-                        <b>Mostrar ranking?</b>
-                        <input type="radio" name="opcao" value="yes" checked> Sim
-                        <input type="radio" name="opcao" value="no"> Não
-                    </li>
-                      <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>   
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                    <li>Jhonatan</li>
-                </ul>
+                <ol>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">3</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">4</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">5</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">6</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">7</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">7</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">8</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">8</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                    <li>Jhonatan F Paula <span class="badge badge-warning">10</span> </li>
+                </ol>
             </div>
             <div class="amount">R$ 87,00</div>
         </div>
@@ -271,3 +313,22 @@ html, body{
     
 </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+<script>
+
+$( "#config" ).click(function() {
+    var color = $( this ).css( "background-color" );
+
+    if(color == "rgb(255, 255, 255)"){
+        $( ".menu" ).show();
+        $( "#config" ).css("background-color", "#BDBDBD");
+    }else{
+        $( ".menu" ).hide();
+        $( "#config" ).css("background-color", "#fff");
+    }
+
+});
+
+</script>
